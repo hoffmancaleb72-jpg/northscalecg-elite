@@ -33,8 +33,11 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-ns-border text-center text-xs text-ns-muted">
-          Built for contractors. Not consultants.
+        <div className="mt-8 pt-8 border-t border-ns-border flex flex-col items-center gap-2">
+          <span className="text-xs text-ns-muted">Built for contractors. Not consultants.</span>
+          <span style={{ fontSize: "9px", color: "#1e2130" }}>
+            Photography: Eberhard Grossgasteiger / Unsplash
+          </span>
         </div>
       </div>
     </footer>

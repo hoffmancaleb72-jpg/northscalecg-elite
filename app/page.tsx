@@ -3,16 +3,36 @@ import Footer from "@/components/Footer";
 import FeatureCard from "@/components/FeatureCard";
 import Button from "@/components/Button";
 
+const HERO_BG = "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1920&q=85";
+const QUOTE_BG = "https://images.unsplash.com/photo-1484302564-55209eb33b49?auto=format&fit=crop&w=1920&q=80";
+
 export default function Home() {
   return (
     <>
       <Nav />
 
-      {/* Hero */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-16">
-        <div className="mx-auto max-w-4xl text-center flex flex-col gap-10">
+      {/* Hero — Alps photo full bleed */}
+      <section
+        className="relative min-h-screen flex items-center justify-center px-6 pt-16"
+        style={{
+          backgroundImage: `url('${HERO_BG}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 35%",
+        }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(8,10,18,0.45) 0%, rgba(8,10,18,0.15) 35%, rgba(8,10,18,0.80) 78%, #0c0e14 100%)",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-4xl text-center flex flex-col gap-10">
           <div className="flex flex-col gap-5">
-            <h1 className="text-5xl sm:text-7xl font-black leading-[1.05]" style={{ letterSpacing: "-0.03em" }}>
+            <h1
+              className="text-5xl sm:text-7xl font-black leading-[1.05] text-ns-text"
+              style={{ letterSpacing: "-0.03em" }}
+            >
               Every job. Every follow-up.{" "}
               <span className="text-ns-gold">Every system we built for you.</span>
             </h1>
@@ -32,7 +52,11 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section id="features" className="py-24 px-6" style={{ backgroundColor: "rgba(26,29,39,0.3)" }}>
+      <section
+        id="features"
+        className="py-24 px-6"
+        style={{ backgroundColor: "#0c0e14" }}
+      >
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <FeatureCard
@@ -57,18 +81,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Quote band — Dolomites photo */}
+      <section className="relative overflow-hidden" style={{ height: "220px" }}>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('${QUOTE_BG}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center 55%",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, #0c0e14 0%, rgba(12,14,20,0.3) 30%, rgba(12,14,20,0.3) 70%, #0c0e14 100%)",
+          }}
+        />
+        <div className="relative z-10 h-full flex items-center justify-center px-6">
+          <p
+            className="text-xl sm:text-2xl font-black text-center text-ns-text max-w-2xl"
+            style={{ letterSpacing: "-0.03em" }}
+          >
+            Every deal tracked. Every job accounted for.{" "}
+            <span className="text-ns-gold">Every system documented.</span>
+          </p>
+        </div>
+      </section>
+
       {/* Pricing */}
-      <section className="py-24 px-6">
+      <section className="py-24 px-6" style={{ backgroundColor: "#0c0e14" }}>
         <div className="mx-auto max-w-2xl">
           <div className="text-center flex flex-col gap-3 mb-12">
-            <h2 className="text-3xl font-black text-ns-text" style={{ letterSpacing: "-0.03em" }}>
+            <h2
+              className="text-3xl font-black text-ns-text"
+              style={{ letterSpacing: "-0.03em" }}
+            >
               Included with your NorthScale engagement.
             </h2>
             <p className="text-ns-muted">
               No extra cost. No separate login. Part of the system.
             </p>
           </div>
-          <div className="rounded-lg border bg-ns-surface p-8 flex flex-col gap-6" style={{ borderColor: "rgba(245,158,11,0.3)" }}>
+          <div
+            className="rounded-lg border bg-ns-surface p-8 flex flex-col gap-6"
+            style={{ borderColor: "rgba(245,158,11,0.3)" }}
+          >
             <span className="text-xs font-semibold tracking-widest uppercase text-ns-gold">
               NorthScale Client Access — Complimentary
             </span>
@@ -97,7 +155,10 @@ export default function Home() {
       {/* Bottom CTA banner */}
       <section className="py-20 px-6 bg-ns-surface border-y border-ns-border">
         <div className="mx-auto max-w-4xl text-center flex flex-col gap-8">
-          <h2 className="text-3xl sm:text-5xl font-black text-ns-text" style={{ letterSpacing: "-0.03em" }}>
+          <h2
+            className="text-3xl sm:text-5xl font-black text-ns-text"
+            style={{ letterSpacing: "-0.03em" }}
+          >
             Built for contractors who close jobs,{" "}
             <span className="text-ns-gold">not decks.</span>
           </h2>
